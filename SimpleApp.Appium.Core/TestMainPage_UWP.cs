@@ -23,6 +23,7 @@ namespace SimpleApp.Appium.Core
         {
             appiumOptions.AddAdditionalCapability("app", "8a9ae5b0-b586-4d14-afb8-03d7b022fda2_atyx71xy9s7q0!App");
             appiumOptions.AddAdditionalCapability("deviceName", "WindowsPC");
+            appiumOptions.AddAdditionalCapability("fullReset", true);
 
         }
     }

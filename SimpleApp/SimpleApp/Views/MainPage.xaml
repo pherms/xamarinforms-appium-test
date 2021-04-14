@@ -8,37 +8,40 @@
             x:Class="SimpleApp.Views.MainPage">
 
     <TabbedPage.Children>
-        <NavigationPage Title="Login" AutomationId="LoginTabAID">
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_feed.png"/>
-                </OnPlatform>
-            </NavigationPage.Icon>
+        <NavigationPage Title="Login" AutomationId="LoginTabAID" AutomationProperties.Name="Login">
             <x:Arguments>
                 <views:LoginPage />
             </x:Arguments>
-        </NavigationPage>
-        
-        <NavigationPage Title="Browse"  AutomationId="BrowseTabAID">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS" Value="tab_feed.png"/>
                 </OnPlatform>
             </NavigationPage.Icon>
+
+        </NavigationPage>
+        
+        <NavigationPage Title="Browse"  AutomationId="BrowseTabAID" AutomationProperties.Name="Browse">
             <x:Arguments>
                 <views:ItemsPage />
             </x:Arguments>
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="tab_feed.png"/>
+                </OnPlatform>
+            </NavigationPage.Icon>
+
         </NavigationPage>
         
-        <NavigationPage Title="About" AutomationId="AboutTabAID">
+        <NavigationPage Title="About" AutomationId="AboutTabAID" AutomationProperties.Name="About">
+            <x:Arguments>
+                <views:AboutPage />
+            </x:Arguments>
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS" Value="tab_about.png"/>
                 </OnPlatform>
             </NavigationPage.Icon>
-            <x:Arguments>
-                <views:AboutPage />
-            </x:Arguments>
+
         </NavigationPage>
     </TabbedPage.Children>
     
