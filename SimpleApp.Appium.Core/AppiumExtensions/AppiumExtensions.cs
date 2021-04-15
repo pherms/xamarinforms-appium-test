@@ -15,11 +15,11 @@ namespace SimpleApp.Appium.UITests.AppiumExtensions
             switch (devicePlatform)
             {
                 case "iOS":
-                    return webElement.FindElement(By.Id(elementName));
-                case "Android":
-                    return webElement.FindElement(By.Id(elementName));
-                case "UWP":
                     return webElement.FindElementByAccessibilityId(elementName);
+                case "Android":
+                    return webElement.FindElementByAccessibilityId(elementName);
+                case "UWP":
+                    return webElement.FindElementByName(elementName);
                 default:
                     return default(W);
             }
