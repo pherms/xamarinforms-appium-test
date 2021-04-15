@@ -15,9 +15,9 @@ namespace SimpleApp.Appium.UITests.AppiumExtensions
             switch (devicePlatform)
             {
                 case "iOS":
-                    return webElement.FindElement(elementName);
+                    return webElement.FindElement(By.Id(elementName));
                 case "Android":
-                    return webElement.FindElement(elementName);
+                    return webElement.FindElement(By.Id(elementName));
                 case "UWP":
                     return webElement.FindElementByAccessibilityId(elementName);
                 default:
