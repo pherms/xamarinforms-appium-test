@@ -26,5 +26,6 @@ namespace SimpleApp.Appium.Core
             appiumOptions.AddAdditionalCapability(AndroidMobileCapabilityType.AppActivity, "crc64d6c8ffab200b6dd1.MainActivity");
             // appiumOptions.AddAdditionalCapability(AndroidMobileCapabilityType.AppActivity, "md57f24161a4fad3f027b401a142d1bd9c4.MainActivity");
         }
+
     }
 }

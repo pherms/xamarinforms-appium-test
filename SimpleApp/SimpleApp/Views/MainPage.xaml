@@ -32,7 +32,7 @@
 
         </NavigationPage>
         
-        <NavigationPage Title="About" AutomationId="AboutTabAID" AutomationProperties.Name="About">
+        <NavigationPage Title="About" AutomationId="AboutTabAID" AutomationProperties.Name="About" >
             <x:Arguments>
                 <views:AboutPage />
             </x:Arguments>

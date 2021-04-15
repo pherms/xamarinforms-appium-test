@@ -25,5 +25,6 @@ namespace SimpleApp.Appium.Core
             appiumOptions.AddAdditionalCapability(MobileCapabilityType.Udid, "DD98F854-8AEF-489A-9A4A-9BCD0DA078ED");
             appiumOptions.AddAdditionalCapability(IOSMobileCapabilityType.BundleId, "com.companyname.SimpleApp");
         }
+
     }
 }

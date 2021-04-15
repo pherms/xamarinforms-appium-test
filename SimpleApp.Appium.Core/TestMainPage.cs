@@ -79,8 +79,14 @@ namespace SimpleApp.Appium.Core
         public void TestAbout()
         {
             // appiumDriver.FindElement(By.XPath("//*[@content-desc='About']")).Click();
-            appiumDriver.FindElementByAccessibilityId("About").Click();
-
+            if (IsUwp)
+            {
+                appiumDriver.FindElementByName("About").Click();
+            } else
+            {
+                appiumDriver.FindElementByAccessibilityId("About").Click();
+            }
+           
         }
 
         [TearDown()]
