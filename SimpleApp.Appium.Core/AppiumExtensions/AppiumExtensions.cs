@@ -9,7 +9,7 @@ namespace SimpleApp.Appium.UITests.AppiumExtensions
 {
     public static class AppiumExtensions
     {
-        public static W FindElementByName<W>(this AppiumDriver<W> webElement, string elementName) where W : IWebElement
+        public static W GetElementByName<W>(this AppiumDriver<W> webElement, string elementName) where W : IWebElement
         {
             var devicePlatform = DeviceInfo.Platform.ToString();
             switch (devicePlatform)
