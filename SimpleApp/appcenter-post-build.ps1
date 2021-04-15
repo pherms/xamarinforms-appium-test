@@ -17,7 +17,7 @@ else {
     write-output "Building NUnit test projects:"
     get-childitem -Path .\SimpleApp\SimpleApp.Appium.UITestsUWP -Recurse -ErrorAction SilentlyContinue | where-object { $_.name -like "*Tests*.csproj" } | foreach-object {
         write-host "Building unit testfile from project:"  $_.fullname
-        start-process "csc.exe /noconfig /nowarn:1701,1702 /fullpaths /nostdlib+ /errorreport:prompt /warn:4" $_.fullname
+        start-process "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1701,1702 /fullpaths /nostdlib+ /errorreport:prompt /warn:4" $_.fullname
     }
     write-output "Running unit tests"
     get-childitem -Path .\SimpleApp\SimpleApp.Appium.UITestsUWP\bin -Recurse -ErrorAction SilentlyContinue | where-object { $_.name -like "*Tests*.dll" } | foreach-object { 

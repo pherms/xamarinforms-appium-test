@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleApp.Appium.UITests", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleApp.UWP", "SimpleApp.UWP\SimpleApp.UWP.csproj", "{2B161F4C-7CDF-4BCA-B661-0821BF66C321}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{13C3EB33-6778-4249-BE5C-081DD66A00A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -172,6 +174,8 @@ Global
 		{2B161F4C-7CDF-4BCA-B661-0821BF66C321}.Debug|ARM64.Deploy.0 = Debug|ARM64
 		{2B161F4C-7CDF-4BCA-B661-0821BF66C321}.Debug|iPhone.ActiveCfg = Debug|x86
 		{2B161F4C-7CDF-4BCA-B661-0821BF66C321}.Debug|iPhoneSimulator.ActiveCfg = Debug|x86
+		{2B161F4C-7CDF-4BCA-B661-0821BF66C321}.Debug|iPhoneSimulator.Build.0 = Debug|x86
+		{2B161F4C-7CDF-4BCA-B661-0821BF66C321}.Debug|iPhoneSimulator.Deploy.0 = Debug|x86
 		{2B161F4C-7CDF-4BCA-B661-0821BF66C321}.Debug|x64.ActiveCfg = Debug|x64
 		{2B161F4C-7CDF-4BCA-B661-0821BF66C321}.Debug|x64.Build.0 = Debug|x64
 		{2B161F4C-7CDF-4BCA-B661-0821BF66C321}.Debug|x64.Deploy.0 = Debug|x64
