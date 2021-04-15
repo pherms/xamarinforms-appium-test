@@ -21,7 +21,7 @@ build/
 !packages/*/build/
 
 # Enable obj/project.assets.json
-![Oo]bj/project.assets.json
+!*.json
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
