@@ -17,12 +17,12 @@ else {
     write-output "Building NUnit test projects:"
     get-childitem -Path .\SimpleApp\SimpleApp.Appium.UITestsUWP -Recurse -ErrorAction SilentlyContinue | where-object { $_.name -like "*Tests*.csproj" } | foreach-object {
         write-host "Building unit testfile from project:"  $_.fullname
-        & "csc.exe /noconfig /nowarn:1701,1702 /fullpaths /nostdlib+ /errorreport:prompt /warn:4" $_.fullname
+        start-process "csc.exe /noconfig /nowarn:1701,1702 /fullpaths /nostdlib+ /errorreport:prompt /warn:4" $_.fullname
     }
     write-output "Running unit tests"
     get-childitem -Path .\SimpleApp\SimpleApp.Appium.UITestsUWP\bin -Recurse -ErrorAction SilentlyContinue | where-object { $_.name -like "*Tests*.dll" } | foreach-object { 
         write-host "Running unit tests from file:" $_.fullname
-        & .\packages\NUnit.ConsoleRunner.3.12.0\tools\nunit3-console.exe $_.fullname 
+        start-process ".\packages\NUnit.ConsoleRunner.3.12.0\tools\nunit3-console.exe" $_.fullname
     }
 }
 
