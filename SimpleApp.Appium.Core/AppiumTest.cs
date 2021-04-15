@@ -54,6 +54,7 @@ namespace SimpleApp.Appium.Core
 
         public bool IsAndroid => appiumDriver.Capabilities.GetCapability(MobileCapabilityType.PlatformName).Equals("Android");
         public bool IsUwp => appiumDriver.Capabilities.GetCapability(MobileCapabilityType.PlatformName).Equals("Windows");
+        public string Platform => appiumDriver.Capabilities.GetCapability(MobileCapabilityType.PlatformName).ToString();
     }
 
 

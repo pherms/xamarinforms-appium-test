@@ -71,7 +71,7 @@ namespace SimpleApp.Appium.Core
             // var itemDesriptionField = appiumDriver.FindElement(By.Id("ItemDescriptionEntry"));
             var itemDesriptionField = appiumDriver.FindElementByAccessibilityId("ItemDescriptionEntry");
             itemDesriptionField.SendKeys("todo description");
-
+            
             // appiumDriver.FindElement(By.Id("SaveToolbarItem")).Click();
             appiumDriver.FindElementByAccessibilityId("SaveToolbarItem").Click();
         }
@@ -87,13 +87,29 @@ namespace SimpleApp.Appium.Core
             // {
             //     appiumDriver.FindElementByAccessibilityId("About").Click();
             // }
-            appiumDriver.GetElementByName("About").Click();
+            GetElementByName("About")?.Click();
+           // appiumDriver.GetElementByName("About", appiumOptions).Click();
         }
 
         [TearDown()]
         public void TestCleanup()
         {
             appiumDriver.CloseApp();
+        }
+
+        private W GetElementByName(string elementName)
+        {            
+            switch (Platform)
+            {
+                case "iOS":
+                    return appiumDriver.FindElementByAccessibilityId(elementName);
+                case "Android":
+                    return appiumDriver.FindElementByAccessibilityId(elementName);
+                case "Windows":
+                    return appiumDriver.FindElementByName(elementName);
+                default:
+                    return default(W);
+            }
         }
     }
 }

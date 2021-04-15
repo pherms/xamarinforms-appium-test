@@ -10,10 +10,10 @@ namespace SimpleApp.Appium.UITests.AppiumExtensions
     public static class AppiumExtensions
     {
         public static W GetElementByName<W>(this AppiumDriver<W> webElement, string elementName, AppiumOptions options) where W : IWebElement
-        {            
+        {              
             switch (options.PlatformName)
             {
-                case "iOS":
+                case "iOS":                    
                     return webElement.FindElementByAccessibilityId(elementName);
                 case "Android":
                     return webElement.FindElementByAccessibilityId(elementName);
