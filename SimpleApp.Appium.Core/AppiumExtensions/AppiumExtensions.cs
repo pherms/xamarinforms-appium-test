@@ -9,16 +9,15 @@ namespace SimpleApp.Appium.UITests.AppiumExtensions
 {
     public static class AppiumExtensions
     {
-        public static W GetElementByName<W>(this AppiumDriver<W> webElement, string elementName) where W : IWebElement
-        {
-            var devicePlatform = DeviceInfo.Platform.ToString();
-            switch (devicePlatform)
+        public static W GetElementByName<W>(this AppiumDriver<W> webElement, string elementName, AppiumOptions options) where W : IWebElement
+        {            
+            switch (options.PlatformName)
             {
                 case "iOS":
                     return webElement.FindElementByAccessibilityId(elementName);
                 case "Android":
                     return webElement.FindElementByAccessibilityId(elementName);
-                case "UWP":
+                case "Windows":
                     return webElement.FindElementByName(elementName);
                 default:
                     return default(W);
