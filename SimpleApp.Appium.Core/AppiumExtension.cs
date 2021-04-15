@@ -5,24 +5,24 @@ using System.Collections.Generic;
 using System.Text;
 using Xamarin.Essentials;
 
-namespace SimpleApp.Appium.UITests.AppiumExtensions
+namespace SimpleApp.Appium.UITests
 {
-    public static class AppiumExtensions
+    public static class AppiumExtension
     {
-        public static W FindElementByName<W>(this AppiumDriver<W> webElement, string elementName) where W : IWebElement
+        public static W FindElement<W>(this AppiumDriver<W> webElement, string elementName) where W : IWebElement
         {
             var devicePlatform = DeviceInfo.Platform.ToString();
             switch (devicePlatform)
             {
-                case "iOS":
-                    return webElement.FindElement(elementName);
+                case "iOS":                   
+                    return webElement.FindElement(By.Id(elementName));
                 case "Android":
-                    return webElement.FindElement(elementName);
+                    return webElement.FindElement(By.Id(elementName));
                 case "UWP":
                     return webElement.FindElementByAccessibilityId(elementName);
                 default:
                     return default(W);
             }
-        }
+        }       
     }
 }

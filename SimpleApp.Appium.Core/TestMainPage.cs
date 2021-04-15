@@ -3,6 +3,7 @@ using System.Diagnostics;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
+using SimpleApp.Appium.UITests.AppiumExtensions;
 
 namespace SimpleApp.Appium.Core
 {
@@ -85,8 +86,7 @@ namespace SimpleApp.Appium.Core
             } else
             {
                 appiumDriver.FindElementByAccessibilityId("About").Click();
-            }
-           
+            }           
         }
 
         [TearDown()]
