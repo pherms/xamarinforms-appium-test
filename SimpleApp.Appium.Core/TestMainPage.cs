@@ -3,7 +3,6 @@ using System.Diagnostics;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
-using SimpleApp.Appium.UITests.AppiumExtensions;
 
 namespace SimpleApp.Appium.Core
 {
@@ -30,21 +29,29 @@ namespace SimpleApp.Appium.Core
         [SetUp()]
         public void SetupTest()
         {
-            appiumDriver.CloseApp();
+            // appiumDriver.CloseApp();
             appiumDriver.LaunchApp();
         }
 
         [Test()]
         public void TestLogin()
         {
-            appiumDriver.FindElementByAccessibilityId("Login");
+            GetElementByName("Login");
 
             // By XPath:
             // appiumDriver.FindElement(By.XPath("//*[@content-desc='UserName']")).SendKeys("user@email.com");
             // Or by AccessibilityID (AutomationID property in the XAML file
-            appiumDriver.FindElementByAccessibilityId("UserName").SendKeys("user@email.com");
-
-            appiumDriver.FindElementByAccessibilityId("Password").SendKeys("password");
+            if (IsUwp)
+            {
+                appiumDriver.FindElementByAccessibilityId("UserName").SendKeys("user@email.com");
+                appiumDriver.FindElementByAccessibilityId("Password").SendKeys("password");
+            }
+            else
+            {
+                GetElementByName("UserName").SendKeys("user@email.com");
+                GetElementByName("Password").SendKeys("password");
+            }
+  
             appiumDriver.FindElementByAccessibilityId("LoginButton").Click();
 
             var text = appiumDriver.FindElementByAccessibilityId("StatusLabel").Text;
@@ -60,10 +67,19 @@ namespace SimpleApp.Appium.Core
         {
             // appiumDriver.FindElement(By.Id("Browse")).Click();
             // appiumDriver.FindElement(By.XPath("//*[@content-desc='Browse']")).Click();
-            appiumDriver.FindElementByAccessibilityId("Browse").Click();
+            GetElementByName("Browse").Click();
+
             // appiumDriver.FindElement(By.Id("AddToolbarItem")).Click();
             // appiumDriver.FindElement(By.XPath("//*[@content-desc='AddToolbarItem']")).Click();
-            appiumDriver.FindElementByAccessibilityId("AddToolbarItem").Click();
+            if (IsUwp)
+            {
+                appiumDriver.FindElementByAccessibilityId("MoreButton").Click();
+            }
+            else
+            {
+                GetElementByName("AddToolbarItem").Click();
+            }
+   
             // var itemNameField = appiumDriver.FindElement(By.Id("ItemNameEntry"));
             var itemNameField = appiumDriver.FindElementByAccessibilityId("ItemNameEntry");
             itemNameField.SendKeys("todo");
@@ -73,7 +89,7 @@ namespace SimpleApp.Appium.Core
             itemDesriptionField.SendKeys("todo description");
             
             // appiumDriver.FindElement(By.Id("SaveToolbarItem")).Click();
-            appiumDriver.FindElementByAccessibilityId("SaveToolbarItem").Click();
+            GetElementByName("SaveToolbarItem").Click();
         }
 
         [Test()]
@@ -87,8 +103,7 @@ namespace SimpleApp.Appium.Core
             // {
             //     appiumDriver.FindElementByAccessibilityId("About").Click();
             // }
-            GetElementByName("About")?.Click();
-           // appiumDriver.GetElementByName("About", appiumOptions).Click();
+            GetElementByName("About").Click();
         }
 
         [TearDown()]
