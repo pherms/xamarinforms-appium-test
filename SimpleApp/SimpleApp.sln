@@ -10,6 +10,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleApp", "SimpleApp\SimpleApp.csproj", "{5E8B7FBB-C39B-45D7-B7C2-893852814158}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleApp.Appium.UITests", "..\SimpleApp.Appium.Core\SimpleApp.Appium.UITests.csproj", "{96750DCB-ACFB-44B0-9AD2-1AFC0772EA9A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5E8B7FBB-C39B-45D7-B7C2-893852814158} = {5E8B7FBB-C39B-45D7-B7C2-893852814158}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleApp.UWP", "SimpleApp.UWP\SimpleApp.UWP.csproj", "{2B161F4C-7CDF-4BCA-B661-0821BF66C321}"
 EndProject
