@@ -48,7 +48,7 @@ bld/
 #wwwroot/
 
 # add project.assets.json
-!project.assets.json
+![Oo]bj/project.assets.json
 
 # Visual Studio 2017 auto generated files
 Generated\ Files/
