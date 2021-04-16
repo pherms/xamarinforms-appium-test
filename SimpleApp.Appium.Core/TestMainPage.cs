@@ -73,7 +73,7 @@ namespace SimpleApp.Appium.Core
             // appiumDriver.FindElement(By.XPath("//*[@content-desc='AddToolbarItem']")).Click();
             if (IsUwp)
             {
-                appiumDriver.FindElementByAccessibilityId("MoreButton").Click();
+                GetElementByName("More app bar").Click();
             }
             else
             {

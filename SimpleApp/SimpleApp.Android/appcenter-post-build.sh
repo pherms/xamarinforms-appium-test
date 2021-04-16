@@ -9,7 +9,7 @@ echo "Found NUnit test projects:"
 find $APPCENTER_SOURCE_DIRECTORY -regex '.*SimpleApp.Appium.UITestsUWP.*\.csproj' -exec echo {} \;
 echo
 echo "Building NUnit test projects:"
-find $APPCENTER_SOURCE_DIRECTORY -regex '.*SimpleApp.Appium.UITestsUWP.*\.csproj' -exec msbuild {} \;
+find $APPCENTER_SOURCE_DIRECTORY -regex '.*SimpleApp.Appium.UITestsUWP.*\.csproj' -exec dotnet build {} \;
 echo
 echo "Compiled projects to run NUnit tests:"
 find $APPCENTER_SOURCE_DIRECTORY -regex '.*SimpleApp.Appium.UITestsUWP.*\.dll' -exec echo {} \;
