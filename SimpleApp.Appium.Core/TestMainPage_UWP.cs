@@ -12,7 +12,7 @@ namespace SimpleApp.Appium.Core
     [TestFixture]
     public class TestMainPage_UWP : TestMainPage<WindowsDriver<WindowsElement>, WindowsElement>
     {
-        public TestMainPage_UWP() : base("MainPageTests") {}
+        public TestMainPage_UWP() : base("MainPageTests") { }
 
         protected override WindowsDriver<WindowsElement> GetDriver()
         {
