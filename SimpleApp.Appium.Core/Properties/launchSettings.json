@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SimpleApp.Appium.UITests": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}
