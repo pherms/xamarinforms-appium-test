@@ -19,7 +19,9 @@ jobs:
           # The name of the SonarQube project
           sonarProjectName:  "Your SonarQube project name goes here"
           # The name and relative path of the solution file or project file
-          dotnetBuildArguments: Your solution file or project file (including relative path) goes here
+          dotnetBuildArguments: SimpleApp/SimpleApp.sln
+          # The name and relative path of the project file for the Unit/UI tests
+          dotnetTestArguments: SimpleApp.Appium.Core/SimpleApp.Appium.UITests.csproj
           # The SonarQube server URL. For SonarCloud, skip this setting.
           sonarHostname:  The base URL of your SonarQube instance goes here
           # Pass github event pull_request head sha
