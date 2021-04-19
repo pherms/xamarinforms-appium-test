@@ -25,7 +25,6 @@ namespace SimpleApp.Appium.Core
             appiumOptions.AddAdditionalCapability("deviceName", "WindowsPC");
             appiumOptions.AddAdditionalCapability("fullReset", true);
             appiumOptions.AddAdditionalCapability(MobileCapabilityType.PlatformName, "Windows");
-
         }
 
     }
