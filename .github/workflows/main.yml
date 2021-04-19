@@ -24,7 +24,7 @@ jobs:
           sonarHostname:  The base URL of your SonarQube instance goes here
           # Pass github event pull_request head sha
           sonarBeginArguments: /d:sonar.scm.revision=${{ github.event.pull_request.head.sha }}
-          sonarDisableScan: false
+          sonarEnableScan: false
         env:
           SONAR_TOKEN: ${{ secrets.SONARQUBE_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
