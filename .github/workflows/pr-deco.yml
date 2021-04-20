@@ -1,0 +1,27 @@
+on: 
+  pull_request:
+    branches:
+      - develop
+name: Sonarscanner and PR decoration
+jobs:
+  sonarscanner-pr-decoration:
+    runs-on: ubuntu-latest
+    name: Sonarscanner and PR decoration
+    steps:
+      - uses: actions/checkout@v2
+      - uses: highbyte/sonarscan-dotnet@2.0
+        name: SonarScanner for .NET 5 with pull request decoration support
+        with:
+          # The key of the SonarQube project
+          sonarProjectKey: simpleapp
+          # The name of the SonarQube project
+          sonarProjectName:  "Simple App"
+          # The solution file or project name
+          dotnetBuildArguments: ./SimpleApp
+          # The SonarQube server URL. For SonarCloud, skip this setting.
+          sonarHostname:  https://sqplayground.xablu.com
+          # Pass github event pull_request head sha
+          #sonarBeginArguments: /d:sonar.scm.revision=${{ github.event.pull_request.head.sha }}
+        env:
+          SONAR_TOKEN: ${{ secrets.SONARQUBE_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
