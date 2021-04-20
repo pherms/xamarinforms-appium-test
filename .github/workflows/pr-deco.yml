@@ -2,11 +2,11 @@ on:
   pull_request:
     branches:
       - develop
-name: Sonarscanner and PR decoration
+name: Orig PR decoration
 jobs:
   sonarscanner-pr-decoration:
     runs-on: ubuntu-latest
-    name: Sonarscanner and PR decoration
+    name: Orig PR decoration
     steps:
       - uses: actions/checkout@v2
       - uses: highbyte/sonarscan-dotnet@2.0
