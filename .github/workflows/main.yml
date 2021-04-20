@@ -9,8 +9,8 @@ jobs:
     runs-on: macos-latest
     name: Sonarscanner and PR decoration
     steps:
-      - uses: actions/checkout@v2
-        name: Checkout source direcotry
+#       - uses: actions/checkout@v2
+#         name: Checkout source direcotry
       - uses: xablu/github-pr-decoration-action@main
         name: SonarScanner for .NET 5 with pull request decoration support
         with:
