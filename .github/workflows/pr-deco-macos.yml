@@ -2,13 +2,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  Code analysis:
+  code_analysis:
     name: Code analysis
     runs-on: macos-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-        
+
       - name: Install Sonar Scanner
         run: dotnet tool install --global dotnet-sonarscanner
         
