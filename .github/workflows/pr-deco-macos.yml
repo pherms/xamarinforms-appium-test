@@ -10,10 +10,24 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Install Sonar Scanner
-        run: dotnet tool install --global dotnet-sonarscanner
+        run: |
+          echo "Installing Sonar scanner for dotnet"
+          dotnet tool install --global dotnet-sonarscanner
+      
+      - name: Install Appium
+        run: |
+          echo "Installing appium"
+          npm install -g appium
+        
+      - name: Run appium server
+        run: |
+          echo "Starting Appium server"
+          appium -a 127.0.0.1 -p 4723 &>/dev/null &
         
       - name: Nuget restore packages
-        run: nuget restore SimpleApp/SimpleApp.sln
+        run: |
+          echo "Restoring Nuget packages"
+          nuget restore SimpleApp/SimpleApp.sln
         
       - name: Run build and Sonarscanner
         env:
@@ -105,7 +119,7 @@ jobs:
           sh -c "${dotnet_build_cmd}"
 
           #Run dotnet test command (unless user choose not to)
-          if ! [[ "${DOTNETDISABLETESTS,,}" == "true" || "${DOTNETDISABLETESTS}" == "1" ]]; then
+          if ! [[ "${DOTNETDISABLETESTS}" == "true" || "${DOTNETDISABLETESTS}" == "1" ]]; then
               echo "dotnet_test_cmd: $dotnet_test_cmd"
               sh -c "${dotnet_test_cmd}"
           fi
