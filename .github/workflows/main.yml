@@ -6,7 +6,7 @@ on:
 name: Sonarscanner and PR decoration
 jobs:
   sonarscanner-pr-decoration:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     name: Sonarscanner and PR decoration
     steps:
       - uses: actions/checkout@v2
