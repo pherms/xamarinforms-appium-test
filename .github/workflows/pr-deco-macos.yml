@@ -12,6 +12,9 @@ jobs:
       - name: Install Sonar Scanner
         run: dotnet tool install --global dotnet-sonarscanner
         
+      - name: Nuget restore packages
+        run: nuget restore SimpleApp/SimpleApp.sln
+        
       - name: Run build and Sonarscanner
         env:
           SONARENABLESCAN: "true"
