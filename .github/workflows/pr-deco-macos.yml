@@ -23,9 +23,10 @@ jobs:
           DOTNETDISABLETESTS: "true"
           SONARBEGINARGUMENTS: ""
           SONARHOSTNAME: "https://sqplayground.xablu.com"
+          SONARTOKEN: ${{ secrets.SONARQUBE_TOKEN }}
         run: |
           if [[ "${SONARENABLESCAN}" == "true" ]]; then
-              sonar_begin_cmd="/dotnet-sonarscanner begin /k:\"${SONARPROJECTKEY}\" /n:\"${SONARPROJECTNAME}\" /d:sonar.login=\"${{secrets.SONARQUBE_TOKEN}}\" /d:sonar.host.url=\"${SONARHOSTNAME}\""
+              sonar_begin_cmd="/dotnet-sonarscanner begin /k:\"${SONARPROJECTKEY}\" /n:\"${SONARPROJECTNAME}\" /d:sonar.login=\"${SONARTOKEN}\" /d:sonar.host.url=\"${SONARHOSTNAME}\""
               if [ -n "${SONARORGANIZATION}" ]; then
                   sonar_begin_cmd="$sonar_begin_cmd /o:\"${SONARORGANIZATION}\""
               fi
@@ -54,7 +55,7 @@ jobs:
           # Build Sonarscanner end command
           #-----------------------------------
           if [[ "${SONARENABLESCAN}" == "true" ]]; then
-              sonar_end_cmd="/dotnet-sonarscanner end /d:sonar.login=\"${{SONARQUBE_TOKEN}}\""
+              sonar_end_cmd="/dotnet-sonarscanner end /d:sonar.login=\"${SONARTOKEN}\""
           fi
 
           #-----------------------------------
