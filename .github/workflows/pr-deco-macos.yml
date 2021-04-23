@@ -118,11 +118,13 @@ jobs:
           echo "dotnet_build_cmd: $dotnet_build_cmd"
           sh -c "${dotnet_build_cmd}"
 
+          echo "------------- Running tests -------------"
           #Run dotnet test command (unless user choose not to)
           if ! [[ "${DOTNETDISABLETESTS}" == "true" || "${DOTNETDISABLETESTS}" == "1" ]]; then
               echo "dotnet_test_cmd: $dotnet_test_cmd"
               sh -c "${dotnet_test_cmd}"
           fi
+          echo "------------ End Running tests -----------"
 
           #Run Sonarscanner .NET Core "end" command
           if [[ "${SONARENABLESCAN}" == "true" ]]; then
