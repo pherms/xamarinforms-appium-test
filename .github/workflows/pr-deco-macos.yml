@@ -36,7 +36,7 @@ jobs:
           SONARPROJECTNAME: "Simple App"
           SONARORGANIZATION: ""
           DOTNETBUILDARGUMENTS: SimpleApp/SimpleApp.sln
-          DOTNETTESTARGUMENTS: ""
+          DOTNETTESTARGUMENTS: SimpleApp.Appium.Core/bin/Debug/netcoreapp3.1/SimpleApp.Appium.UITests.dll
           DOTNETDISABLETESTS: "true"
           SONARBEGINARGUMENTS: ""
           SONARHOSTNAME: "https://sqplayground.xablu.com"
