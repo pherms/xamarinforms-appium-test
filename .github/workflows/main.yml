@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         name: Checkout source direcotry
-      - uses: xablu/github-pr-decoration-action@main
+      - uses: pherms/github-pr-decoration-action@main
         name: SonarScanner for .NET 5 with pull request decoration support
         with:
           # The key of the SonarQube project
