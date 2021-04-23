@@ -94,7 +94,7 @@ jobs:
           #-----------------------------------
           # Build dotnet test command
           #-----------------------------------
-          dotnet_test_cmd="dotnet test"
+          dotnet_test_cmd="nunit3-console"
           if [ -n "${DOTNETTESTARGUMENTS}" ]; then
               dotnet_test_cmd="$dotnet_test_cmd ${DOTNETTESTARGUMENTS}"
           fi
