@@ -10,7 +10,7 @@ namespace SimpleApp.iOS.additionalStuff
 
         class Hello
         {
-            static void Main(string[] args)
+            static void HW(string[] args)
             {
                 System.Console.WriteLine("Hello World!");
             }

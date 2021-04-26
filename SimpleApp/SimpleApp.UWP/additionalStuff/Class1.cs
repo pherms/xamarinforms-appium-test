@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Android.Views;
 
 
 namespace SimpleApp.UWP.additionalStuff
@@ -11,7 +10,7 @@ namespace SimpleApp.UWP.additionalStuff
 
         class Hello
         {
-            static void Main(string[] args)
+            static void HW(string[] args)
             {
                 System.Console.WriteLine("Hello World!");
             }
