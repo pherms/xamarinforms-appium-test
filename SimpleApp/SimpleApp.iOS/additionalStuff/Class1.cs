@@ -10,10 +10,10 @@ namespace SimpleApp.UWP.additionalStuff
 {
     class Class1
     {
-    protected bool SetProperty<T>(ref T backingStore, T value,
+        protected bool SetProperty<T>(ref T backingStore, T value,
 
-    [CallerMemberName] string propertyName = "",
-                Action onChanged = null)
+        [CallerMemberName] string propertyName = "",
+                    Action onChanged = null);
 
 
         protected override void OnCreate(Bundle savedInstanceState)
