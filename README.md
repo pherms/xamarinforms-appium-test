@@ -21,4 +21,4 @@ npm install appium-doctor -g
 - Take note of your installed Similator/Emulator names and update the InitAppiumOptions method in TestLoginPage_iOS and TestLoginPage_Droid respectively
 
 
- 
+ Added new feature
