@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace SimpleApp.UWP.additionalStuff
+namespace SimpleApp.iOS.additionalStuff
 {
 
         class Hello

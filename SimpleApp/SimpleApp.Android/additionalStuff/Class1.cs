@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Android.Views;
 
 
-namespace SimpleApp.UWP.additionalStuff
+namespace SimpleApp.Android.additionalStuff
 {
 
         class Hello
