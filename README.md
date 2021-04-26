@@ -22,3 +22,4 @@ npm install appium-doctor -g
 
 
  Added new feature
+ And another one
