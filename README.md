@@ -24,4 +24,4 @@ npm install appium-doctor -g
  Added new feature
  And another one
 and yet another
-last one after enabling PR decoration in Sonarqube
+
