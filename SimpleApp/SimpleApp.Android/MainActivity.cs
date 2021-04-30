@@ -34,6 +34,8 @@ namespace SimpleApp.Droid
 
             int result = baseValue / 0;
 
+            Console.WriteLine(result);
+
         }
 
     }
