@@ -28,6 +28,13 @@ namespace SimpleApp.Droid
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
+            var bla = "bla";
+            int baseValue = 3;
+
+            int result = baseValue / 0;
+
         }
+
     }
 }
