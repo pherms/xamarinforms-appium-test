@@ -1,11 +1,13 @@
 on:
+  workflow_dispatch:
   pull_request:
     branches:
       - develop
 
+name: PR Decoration MacOS
 jobs:
-  code_analysis:
-    name: Code analysis
+  PR_Decoration:
+    name: PR Decoration
     runs-on: macos-latest
     steps:
       - name: Checkout
@@ -15,22 +17,22 @@ jobs:
         run: |
           echo "Installing Sonar scanner for dotnet"
           dotnet tool install --global dotnet-sonarscanner
-      
+
       - name: Install Appium
         run: |
           echo "Installing appium"
           npm install -g appium
-        
+
       - name: Run appium server
         run: |
           echo "Starting Appium server"
           appium -a 127.0.0.1 -p 4723 &>/dev/null &
-        
+
       - name: Nuget restore packages
         run: |
           echo "Restoring Nuget packages"
           nuget restore SimpleApp/SimpleApp.sln
-        
+
       - name: Run build and Sonarscanner
         env:
           SONARENABLESCAN: "true"
