@@ -3,6 +3,7 @@ on:
     branches:
       - develop
 
+name: PR Decoration MacOS
 jobs:
   PR_Decoration:
     name: PR Decoration
